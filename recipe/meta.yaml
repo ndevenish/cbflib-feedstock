@@ -1,0 +1,79 @@
+{% set name = "cbflib" %}
+{% set version = "0.9.6" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  - git_url: https://github.com/ndevenish/cbflib
+    git_rev: refactor
+  # TODO: Switch to fixed target when ready
+  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  # # If getting the source from GitHub, remove the line above,
+  # # uncomment the line below, and modify as needed. Use releases if available:
+  # # url: https://github.com/simplejson/simplejson/releases/download/{{ version }}/simplejson-{{ version }}.tar.gz
+  # # and otherwise fall back to archive
+  # # url: https://github.com/simplejson/simplejson/archive/v{{ version }}.tar.gz
+  # sha256: d58439c548433adcda98e695be53e526ba940a4b9c44fb9a05d92cd495cdd47f
+  # # sha256 is the preferred checksum -- you can get it for a file with:
+  # #  `openssl sha256 <file name>`.
+  # # You may need the openssl package, available on conda-forge:
+  # #  `conda install openssl -c conda-forge``
+
+build:
+  number: 2
+
+requirements:
+  build:
+    - python
+    - cmake
+    - ninja
+    - m4
+    - "{{ compiler('cxx') }}"
+    - "{{ compiler('fortran') }}"
+
+  host:
+    - python
+    - hdf5<1.12
+    - pcre
+    - pip
+
+  run:
+    - hdf5 <1.12
+    - pcre
+
+# TODO: Integrate cbflib test suite
+# test:
+#   # Some packages might need a `test/commands` key to check CLI.
+#   # List all the packages/modules that `run_test.py` imports.
+#   imports:
+#     - simplejson
+#     - simplejson.tests
+
+
+
+about:
+  home: http://www.bernstein-plus-sons.com/software/CBF/
+  # Remember to specify the license variants for BSD, Apache, GPL, and LGPL.
+  # Use the SPDX identifier, e.g: GPL-2.0-only instead of GNU General Public License version 2.0
+  # See https://spdx.org/licenses/
+  license: GPL-2.0-only
+  license_file: LICENSE
+  license_family: GPL
+  summary: 'An API for CBF/imgCIF Crystallographic Binary Files'
+  # The remaining entries in this section are optional, but recommended.
+  # description: |
+  #   simplejson is a simple, fast, complete, correct and extensible
+  #   JSON <https://json.org> encoder and decoder for Python 2.5+ and
+  #   Python 3.3+. It is pure Python code with no dependencies, but includes
+  #   an optional C extension for a serious speed boost.
+  # doc_url: https://simplejson.readthedocs.io/
+  # dev_url: https://github.com/simplejson/simplejson
+
+# extra:
+#   recipe-maintainers:
+#     # GitHub IDs for maintainers of the recipe.
+#     # Always check with the people listed below if they are OK becoming maintainers of the recipe. (There will be spam!)
+#     - LisaSimpson
+#     - LandoCalrissian
