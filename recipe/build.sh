@@ -15,12 +15,12 @@ set -e
 # fi
 
 # Regenerate the python bindings with an up-to-date swig
-(
-    cd pycbf
-    lynx -dump ../doc/CBFlib.html > CBFlib.txt
-    python make_pycbf.py
-    swig -python pycbf.i
-)
+# (
+#     cd pycbf
+#     lynx -dump ../doc/CBFlib.html > CBFlib.txt
+#     python make_pycbf.py
+#     swig -python pycbf.i
+# )
 
 
 mkdir -p _build

@@ -32,8 +32,8 @@ requirements:
     - m4
     - "{{ compiler('cxx') }}"
     - "{{ compiler('fortran') }}"
-    - lynx
-    - swig>=4
+    # - lynx
+    # - swig>=4
 
   host:
     - python
