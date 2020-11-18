@@ -1,3 +1,8 @@
+
+cd pycbf
+swig -python pycbf.i
+cd ..
+
 mkdir build
 cd build
 cmake ^

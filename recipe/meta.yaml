@@ -32,6 +32,7 @@ requirements:
     - m4    # [not win]
     - "{{ compiler('cxx') }}"
     - "{{ compiler('fortran') }}" # [not win]
+    - swig
 
   host:
     - python
