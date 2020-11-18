@@ -22,7 +22,6 @@ set -e
 #     swig -python pycbf.i
 # )
 
-
 mkdir -p _build
 cd _build
 cmake .. -GNinja \
