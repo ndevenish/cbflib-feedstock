@@ -22,7 +22,7 @@ source:
   # #  `conda install openssl -c conda-forge``
 
 build:
-  number: 2
+  number: 3
   skip: True # [win]
 
 requirements:
@@ -51,9 +51,6 @@ test:
 
 about:
   home: http://www.bernstein-plus-sons.com/software/CBF/
-  # Remember to specify the license variants for BSD, Apache, GPL, and LGPL.
-  # Use the SPDX identifier, e.g: GPL-2.0-only instead of GNU General Public License version 2.0
-  # See https://spdx.org/licenses/
   license: GPL-2.0-only
   license_file: LICENSE
   license_family: GPL
@@ -65,7 +62,7 @@ about:
   #   Python 3.3+. It is pure Python code with no dependencies, but includes
   #   an optional C extension for a serious speed boost.
   # doc_url: https://simplejson.readthedocs.io/
-  # dev_url: https://github.com/simplejson/simplejson
+  dev_url: https://github.com/yayahjb/cbflib
 
 # extra:
 #   recipe-maintainers:
