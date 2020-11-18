@@ -1,2 +1,6 @@
-conda_forge_output_validation: true
-
+github:
+  user_or_org: ndevenish
+channels:
+  targets:
+  -
+    - ndevenish
