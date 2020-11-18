@@ -1,6 +1,5 @@
 github:
   user_or_org: ndevenish
 channels:
-  targets:
-  -
-    - ndevenish
+   targets:
+     - [ndevenish, main]
