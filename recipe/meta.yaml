@@ -7,7 +7,7 @@ package:
 
 source:
   - git_url: https://github.com/ndevenish/cbflib
-    git_rev: refactor
+    git_rev: winchanges
   # TODO: Switch to fixed target when ready
   # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   # # If getting the source from GitHub, remove the line above,
