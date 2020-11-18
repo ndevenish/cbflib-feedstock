@@ -31,7 +31,7 @@ requirements:
     - cmake
     - ninja # [not win]
     - m4    # [not win]
-    - "{{ compiler('cxx') }}"
+    - "{{ compiler('c') }}"
     - "{{ compiler('fortran') }}" # [not win]
     - swig
 
