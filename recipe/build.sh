@@ -32,5 +32,5 @@ cmake .. -GNinja \
     -DPython_ROOT_DIR=$PREFIX -DPython_FIND_STRATEGY=LOCATION \
     -DUSE_TIFF=no \
     -DBUILD_PYCBF=yes \
-    -DUSE_FORTRAN=yes
+    -DUSE_FORTRAN=no
 ninja install
