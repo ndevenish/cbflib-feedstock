@@ -28,12 +28,10 @@ requirements:
   build:
     - python
     - cmake
-    - ninja
-    - m4
+    - ninja # [not win]
+    - m4    # [not win]
     - "{{ compiler('cxx') }}"
-    - "{{ compiler('fortran') }}"
-    # - lynx
-    # - swig>=4
+    - "{{ compiler('fortran') }}" # [not win]
 
   host:
     - python
