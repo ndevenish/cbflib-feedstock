@@ -17,5 +17,3 @@ cmake ^
     -G"Visual Studio %VS_MAJOR% %VS_YEAR% Win64" || exit /b 1
 cmake --build . --target INSTALL || exit /b 1
 
-@REM mkdir %PREFIX%\lib\hdf5\plugin
-@REM copy %PREFIX%\lib\plugins\h5lz4.dll %PREFIX%\lib\hdf5\plugin || exit /b 1

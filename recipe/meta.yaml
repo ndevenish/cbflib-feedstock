@@ -6,42 +6,36 @@ package:
   version: {{ version }}
 
 source:
+  # Temporarily use git repository until we figure out what changes are
+  # needed. Then coordinate with @yayahjb to make a new release.
+  # url: https://github.com/yayahjb/cbflib/archive/CBFlib-{{ version }}.tar.gz
+  # sha256: b3ed6cbddc7dd9c565ac116a6eaf44a437e88808921a4e458a26e327e3f66f48
   - git_url: https://github.com/ndevenish/cbflib
     git_rev: refactor
-  # TODO: Switch to fixed target when ready
-  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  # # If getting the source from GitHub, remove the line above,
-  # # uncomment the line below, and modify as needed. Use releases if available:
-  # # url: https://github.com/simplejson/simplejson/releases/download/{{ version }}/simplejson-{{ version }}.tar.gz
-  # # and otherwise fall back to archive
-  # # url: https://github.com/simplejson/simplejson/archive/v{{ version }}.tar.gz
-  # sha256: d58439c548433adcda98e695be53e526ba940a4b9c44fb9a05d92cd495cdd47f
-  # # sha256 is the preferred checksum -- you can get it for a file with:
-  # #  `openssl sha256 <file name>`.
-  # # You may need the openssl package, available on conda-forge:
-  # #  `conda install openssl -c conda-forge``
 
 build:
-  number: 4
-  skip: True # [win]
+  number: 0
+  skip: True  # [win]
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    # - {{ compiler('fortran') }}  # [not win]
     - python
     - cmake
-    - ninja # [not win]
-    - m4    # [not win]
-    - "{{ compiler('c') }}"
-    - "{{ compiler('fortran') }}" # [not win]
     - swig
+    - ninja  # [not win]
+    - m4     # [not win]
 
   host:
     - python
-    - hdf5<1.12
+    - hdf5 <1.12
     - pcre
     - pip
 
   run:
+    - python
     - hdf5 <1.12
     - pcre
 
@@ -50,23 +44,23 @@ test:
     - pycbf
 
 about:
-  home: http://www.bernstein-plus-sons.com/software/CBF/
-  license: GPL-2.0-only
-  license_file: LICENSE
+  home: https://github.com/yayahjb/cbflib
+  license: GPL-2.0-only OR LGPL-2.0-only
   license_family: GPL
-  summary: 'An API for CBF/imgCIF Crystallographic Binary Files'
-  # The remaining entries in this section are optional, but recommended.
-  # description: |
-  #   simplejson is a simple, fast, complete, correct and extensible
-  #   JSON <https://json.org> encoder and decoder for Python 2.5+ and
-  #   Python 3.3+. It is pure Python code with no dependencies, but includes
-  #   an optional C extension for a serious speed boost.
-  # doc_url: https://simplejson.readthedocs.io/
+  license_file:
+    - doc/gpl.txt
+    - doc/lgpl.txt
+  summary: 'Library for Crystallographic Binary File Dictionary (CBF)'
+  description: |
+    C and Python library for reading CBF formatted files
+  doc_url: https://github.com/yayahjb/cbflib
   dev_url: https://github.com/yayahjb/cbflib
 
-# extra:
-#   recipe-maintainers:
-#     # GitHub IDs for maintainers of the recipe.
-#     # Always check with the people listed below if they are OK becoming maintainers of the recipe. (There will be spam!)
-#     - LisaSimpson
-#     - LandoCalrissian
+extra:
+  recipe-maintainers:
+    - Anthchirp
+    - bkpoon
+    - graeme-winter
+    - ndevenish
+    - phyy-nx
+    - yayahjb
