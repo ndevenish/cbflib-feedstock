@@ -9,6 +9,8 @@ set -e
     swig -python pycbf.i
 )
 
+cp ${RECIPE_DIR}/CMakeLists.txt .
+cp ${RECIPE_DIR}/setup.py.in pycbf/
 
 mkdir -p _build
 cd _build
