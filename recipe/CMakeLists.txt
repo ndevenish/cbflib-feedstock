@@ -989,6 +989,7 @@ if(BUILD_PYCBF)
     find_package(Python COMPONENTS Interpreter Development REQUIRED)
     Python_add_library(_pycbf MODULE ${PYCBF}/pycbf_wrap.c)
     target_link_libraries(_pycbf PUBLIC cbf_lib)
+    target_compile_definitions(_pycbf PRIVATE SWIG_PYTHON_STRICT_BYTE_CHAR)
     # We want to let setup.py install this, so build with install-time RPATH
     set_target_properties(_pycbf PROPERTIES BUILD_WITH_INSTALL_RPATH TRUE
                                             LIBRARY_OUTPUT_DIRECTORY pycbf_setup/pycbf)
