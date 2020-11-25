@@ -23,7 +23,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ compiler('fortran') }}  # [not win]
+    - {{ compiler('fortran') }}  # [linux]
     - python
     - cmake
     - swig
