@@ -1031,7 +1031,7 @@ if(USE_FORTRAN)
         add_custom_command(
             OUTPUT "${f90bldsrc}"
             WORKING_DIRECTORY "${CBF__M4}"
-            COMMAND ${M4} -P "${CBF_M4FLAGS}" "${f90srcm4}" > "${f90bldsrc}"
+            COMMAND ${M4} -P "${M4_FLAGS}" "${f90srcm4}" > "${f90bldsrc}"
             DEPENDS ${CBF_M4_FCB_DEFINES} ${f90srcm4}
             COMMENT "Generating ${f90bldsrc}"
         )
@@ -1091,13 +1091,13 @@ if(USE_FORTRAN AND BUILD_TESTING)
     #
     add_custom_command(OUTPUT "${CBF__BLDEXMP}/test_fcb_read_image.f90"
         WORKING_DIRECTORY "${CBF__M4}"
-        COMMAND ${M4} -P "${CBF_M4FLAGS}" "${CBF__M4}/test_fcb_read_image.m4" > "${CBF__BLDEXMP}/test_fcb_read_image.f90"
+        COMMAND ${M4} -P "${M4_FLAGS}" "${CBF__M4}/test_fcb_read_image.m4" > "${CBF__BLDEXMP}/test_fcb_read_image.f90"
         DEPENDS ${CBF_M4_FCB_DEFINES} "${CBF__M4}/test_fcb_read_image.m4"
         COMMENT "Generating ${test_fcb_read_image.f90}"
     )
     add_custom_command(OUTPUT "${CBF__BLDEXMP}/test_xds_binary.f90"
         WORKING_DIRECTORY "${CBF__M4}"
-        COMMAND ${M4} -P "${CBF_M4FLAGS}" "${CBF__M4}/test_xds_binary.m4" > "${CBF__BLDEXMP}/test_xds_binary.f90"
+        COMMAND ${M4} -P "${M4_FLAGS}" "${CBF__M4}/test_xds_binary.m4" > "${CBF__BLDEXMP}/test_xds_binary.f90"
         DEPENDS ${CBF_M4_FCB_DEFINES} "${CBF__M4}/test_xds_binary.m4"
         COMMENT "Generating ${test_xds_binary.f90}"
     )
